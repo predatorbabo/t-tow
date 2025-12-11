@@ -10,10 +10,6 @@
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "dependencies": {
-    "@dataconnect/generated": "file:src/dataconnect-generated",
-    "@google/genai": "^1.30.0",
-    "@react-google-maps/api": "^2.20.7",
-    "firebase": "^12.6.0",
     "lucide-react": "^0.556.0",
     "react": "19.2.1",
     "react-dom": "19.2.1",
