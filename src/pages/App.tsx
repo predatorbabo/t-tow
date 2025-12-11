@@ -5,9 +5,9 @@ import { TRANSLATIONS } from '../constants';
 import { ThemeContext, Theme } from '../contexts/ThemeContext';
 import { NavBar } from '../components/NavBar';
 import { Header } from '../components/Header';
+import AuthPage from './AuthPage';
 
 // Lazy-loaded components
-const AuthPage = lazy(() => import('./AuthPage'));
 const HomePage = lazy(() => import('./HomePage'));
 const TruckListPage = lazy(() => import('./TruckListPage'));
 const OwnerChatPage = lazy(() => import('./OwnerChatPage'));
@@ -50,9 +50,7 @@ const App: React.FC = () => {
   if (!user) {
     return (
       <ThemeContext.Provider value={{ ...theme, setTheme }}>
-        <Suspense fallback={renderLoader()}>
-          <AuthPage onLogin={handleLogin} currentLang={currentLang} setLanguage={setCurrentLang} />
-        </Suspense>
+        <AuthPage onLogin={handleLogin} currentLang={currentLang} setLanguage={setCurrentLang} />
       </ThemeContext.Provider>
     );
   }

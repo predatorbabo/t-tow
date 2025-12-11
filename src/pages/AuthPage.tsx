@@ -179,7 +179,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin, currentLang, setLanguage }
             </>
           )}
 
-          {error && <p className="text-red-500 text-sm text-center">{error}</p>}</p>
+          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
 
           <button type="submit" className={`w-full py-3 rounded-lg font-semibold transition-colors ${themeClasses.primary}`} disabled={isLoading}>
             {isLoading ? 'Loading...' : (isLogin ? t.login : t.signup)}
