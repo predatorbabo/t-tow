@@ -5,7 +5,7 @@ import { TruckOwner, ChatMessage, MessageStatus } from '../types';
 import { CONSTANTINE_COORDS, TRANSLATIONS } from '../constants';
 import { useTheme } from '../contexts/ThemeContext';
 import { useNotifications } from '../hooks/useNotifications';
-import { db } from '../lib/firebase';
+import { db } from '../firebase';
 import { collection, query, onSnapshot, where, addDoc, serverTimestamp, orderBy } from 'firebase/firestore';
 
 const OwnerChatPage = ({ user, currentLang }: { user: TruckOwner, currentLang: string }) => {

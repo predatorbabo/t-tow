@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Filter, Truck, Phone } from 'lucide-react';
 import { TRANSLATIONS } from '../constants';
 import { useTheme } from '../contexts/ThemeContext';
-import { db } from '../lib/firebase';
+import { db } from '../firebase';
 import { collection, query, onSnapshot } from 'firebase/firestore';
 import { TruckOwner } from '../types';
 

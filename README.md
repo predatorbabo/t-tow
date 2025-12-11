@@ -1,11 +1,10 @@
-# DzTow - Roadside Assistance App (MVP)
+# T-Tow - Roadside Assistance App (MVP)
 
-**DzTow** is a Progressive Web Application (PWA) designed for the worldwide market to connect stranded drivers with nearby tow truck owners in real-time. This MVP (Minimum Viable Product) demonstrates the core workflows for both Service Seekers (Users) and Service Providers (Truck Owners).
+**T-Tow** is a Progressive Web Application (PWA) designed for the worldwide market to connect stranded drivers with nearby tow truck owners in real-time. This MVP (Minimum Viable Product) demonstrates the core workflows for both Service Seekers (Users) and Service Providers (Truck Owners).
 
 ## 🌟 Key Features
 
 ### For Drivers (Users)
-*   **AI-Powered Assistance**: Get instant, helpful advice from a Gemini-powered AI assistant.
 *   **Geolocation & Mapping**: Visualize your location and nearby tow trucks on an interactive map.
 *   **Filtering**: Filter trucks by availability (Online/Offline) or view a list.
 *   **Request Assistance**: One-tap request workflow with status tracking (Pending -> Accepted -> Arriving).

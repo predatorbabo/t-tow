@@ -3,7 +3,7 @@ import { Truck, ShieldCheck } from 'lucide-react';
 import { UserRole, User } from '../types';
 import { TRANSLATIONS } from '../constants';
 import { useTheme } from '../contexts/ThemeContext';
-import { auth, db } from '../lib/firebase';
+import { auth, db } from '../firebase';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -25,7 +25,6 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin, currentLang, setLanguage }
   const [formData, setFormData] = useState({
     email: '',
     password: '',
-    phone: '',
     vehicleModel: '',
     vehiclePlate: '',
     name: '',
@@ -72,7 +71,6 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin, currentLang, setLanguage }
         const newUser: User = {
           id: userCredential.user.uid,
           email: formData.email,
-          phone: formData.phone,
           name: formData.name,
           role,
           language: currentLang,
@@ -154,18 +152,6 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin, currentLang, setLanguage }
               onChange={handleInputChange}
             />
           </div>
-          <div>
-            <label className={`block text-sm font-medium ${themeClasses.text} mb-1`}>Phone Number</label>
-            <input
-              type="tel"
-              name="phone"
-              className={`w-full p-3 border ${themeClasses.border} rounded-lg focus:ring-2 ${themeClasses.ring} outline-none`}
-              placeholder="0550 00 00 00"
-              required
-              value={formData.phone}
-              onChange={handleInputChange}
-            />
-          </div>
           {!isLogin && role === UserRole.USER && (
             <>
               <div>
@@ -193,7 +179,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin, currentLang, setLanguage }
             </>
           )}
 
-          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+          {error && <p className="text-red-500 text-sm text-center">{error}</p>}</p>
 
           <button type="submit" className={`w-full py-3 rounded-lg font-semibold transition-colors ${themeClasses.primary}`} disabled={isLoading}>
             {isLoading ? 'Loading...' : (isLogin ? t.login : t.signup)}

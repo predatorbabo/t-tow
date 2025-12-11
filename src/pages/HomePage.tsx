@@ -6,7 +6,7 @@ import { CONSTANTINE_COORDS, TRANSLATIONS } from '../constants';
 import { useTheme } from '../contexts/ThemeContext';
 import { useNotifications } from '../hooks/useNotifications';
 import { TruckTypeBadge } from '../components/TruckTypeBadge';
-import { db } from '../lib/firebase';
+import { db } from '../firebase';
 import { collection, query, where, onSnapshot, addDoc, serverTimestamp, doc, updateDoc, getDoc, GeoPoint } from 'firebase/firestore';
 
 interface HomePageProps {

@@ -115,7 +115,6 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onLogout, onUpdateUser,
           </div>
         )}
         
-        <p className={`${themeClasses.textMuted} text-sm`}>{user.phone}</p>
         <span className={`mt-2 ${themeClasses.primaryBg} ${themeClasses.primaryText} text-xs px-2 py-1 rounded font-medium`}>
           {user.role}
         </span>
