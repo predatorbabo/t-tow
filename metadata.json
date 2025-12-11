@@ -1,0 +1,7 @@
+{
+  "name": "Depannage DZ - Algeria Roadside Assist",
+  "description": "A progressive web app for tow truck assistance in Algeria, connecting stranded drivers with nearby truck owners in real-time.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
