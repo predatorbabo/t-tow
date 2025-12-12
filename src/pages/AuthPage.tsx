@@ -83,7 +83,11 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLogin, currentLang, setLanguage }
         onLogin(newUser);
       }
     } catch (error: any) {
-      setError(error.message);
+      if (error.code === 'auth/email-already-in-use') {
+        setError('This email address is already in use. Please login or use a different email.');
+      } else {
+        setError(error.message);
+      }
     } finally {
       setIsLoading(false);
     }
