@@ -9,6 +9,10 @@ export default defineConfig(() => {
         port: Number(process.env.PORT) || 3000,
         host: '0.0.0.0',
       },
+      preview: {
+        port: Number(process.env.PORT) || 8080,
+        host: '0.0.0.0',
+      },
       plugins: [
         react(),
         // visualizer({ open: true, gzipSize: true, brotliSize: true }),

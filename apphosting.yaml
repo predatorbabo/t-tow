@@ -24,3 +24,6 @@ env:
 
 build:
   run: npm install && npm run build
+
+start:
+  run: npm start
