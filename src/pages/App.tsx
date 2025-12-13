@@ -33,7 +33,7 @@ const App: React.FC = () => {
     if (user && user.language !== currentLang) {
       setUser(currentUser => currentUser ? { ...currentUser, language: currentLang } : null);
     }
-  }, [currentLang, user]);
+  }, [currentLang]);
 
   const t = TRANSLATIONS[currentLang];
 
