@@ -4,10 +4,14 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
+
+  // Create an object that only contains the environment variables that are safe to expose to the client.
+  const envForClient = {
+    'process.env.VITE_GOOGLE_MAPS_API_KEY': JSON.stringify(env.VITE_GOOGLE_MAPS_API_KEY),
+  };
+
   return {
-    define: {
-      'process.env': env
-    },
+    define: envForClient,
     server: {
       port: Number(env.PORT) || 3000,
       host: '0.0.0.0',
