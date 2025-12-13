@@ -1,0 +1,13 @@
+# Settings for Backend (on Cloud Run) for the 'dev' environment.
+# See https://firebase.google.com/docs/app-hosting/configure#cloud-run
+runConfig:
+  minInstances: 1
+
+# Environment variables and secrets for the 'dev' environment.
+env:
+  # Configure environment variables.
+  # See https://firebase.google.com/docs/app-hosting/configure#user-defined-environment
+  - variable: API_URL
+    value: http://localhost:5001
+    availability:
+      - RUNTIME
