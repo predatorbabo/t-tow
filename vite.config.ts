@@ -1,26 +1,28 @@
 import path from 'path';
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
-// import { visualizer } from 'rollup-plugin-visualizer';
 
-export default defineConfig(() => {
-    return {
-      server: {
-        port: Number(process.env.PORT) || 3000,
-        host: '0.0.0.0',
-      },
-      preview: {
-        port: Number(process.env.PORT) || 8080,
-        host: '0.0.0.0',
-      },
-      plugins: [
-        react(),
-        // visualizer({ open: true, gzipSize: true, brotliSize: true }),
-      ],
-      resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
-        }
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '');
+  return {
+    define: {
+      'process.env': env
+    },
+    server: {
+      port: Number(env.PORT) || 3000,
+      host: '0.0.0.0',
+    },
+    preview: {
+      port: Number(env.PORT) || 8080,
+      host: '0.0.0.0',
+    },
+    plugins: [
+      react(),
+    ],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '.'),
       }
-    };
+    }
+  };
 });
