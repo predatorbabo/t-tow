@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, enableIndexedDbPersistence } from 'firebase/firestore';
+import { initializeFirestore, persistentLocalCache } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -13,18 +13,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const db = getFirestore(app);
-
-try {
-  enableIndexedDbPersistence(db);
-} catch (error) {
-  if (error.code == 'failed-precondition') {
-    // Multiple tabs open, persistence can only be enabled
-    // in one tab at a time.
-    // ...
-  } else if (error.code == 'unimplemented') {
-    // The current browser does not support all of the
-    // features required to enable persistence
-    // ...
-  }
-}
+export const db = initializeFirestore(app, {
+  localCache: persistentLocalCache({}),
+});
